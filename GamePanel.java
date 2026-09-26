@@ -29,11 +29,15 @@ public class GamePanel extends JPanel{
 		coins=new ArrayList<>();
 		for(int i=1;i<=6;i++)
 		{
-			for(int j=1;j<=6;j++)
+			for(int j=1;j<=10;j++)
 			{
 		coins.add(new Coin(i*50,j*50,20,35));
 		}
 	        }
+		for(int i=7;i<=15;i++)
+				{
+					coins.add(new Coin(i*50,285,20,35));
+				}
 
 		walls.add(new Wall(380,0,40,275));
 		walls.add(new Wall(380,335,40,600));
@@ -126,7 +130,7 @@ public class GamePanel extends JPanel{
 				}
 			
 			}
-			if(c==36)
+			if(c==67)
 			{
                         door=new ExitDoor(getWidth()-10,0,10,50);
 			Rectangle exitRect=new Rectangle(door.x,door.y,door.w,door.h);
@@ -160,7 +164,7 @@ public class GamePanel extends JPanel{
 		   }
 		   g.setColor(Color.RED);
                    g.fillRect(enemy.x,enemy.y,enemy.w,enemy.h);
-		   if(c==36)
+		   if(c==67)
 		   {
 			   g.setColor(Color.GREEN);
 			   g.fillRect(door.x,door.y,door.w,door.h);
